@@ -2,3 +2,10 @@
 /.metadata/.plugins
 /.metadata/.mylyn/repositories.xml.zip
 /.metadata/.mylyn/contexts
+
+/Java Fundamentals-The Java Language-CalcEngine/bin/com/javafundamentals/thejavalanguage/calcengine/*.class
+/Java Fundamentals-The Java Language-CalcEngine/.project
+/Java Fundamentals-The Java Language-CalcEngine/*.classpath
+/.metadata/*.ini
+/.metadata/*.log
+/.metadata/*.lock
