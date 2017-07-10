@@ -1,6 +1,6 @@
 package com.javafundamentals.thejavalanguage.calcengine;
 
-public class Main {
+public class MainBasic {
 
 	public static void main(String[] args) {
 		double val1 = 100.0d;
@@ -25,5 +25,6 @@ public class Main {
 			result = 0.0d;
 		}
 		System.out.println(result);
+
 	}
 }
