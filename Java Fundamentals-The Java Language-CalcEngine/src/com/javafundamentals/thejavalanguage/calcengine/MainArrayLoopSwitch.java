@@ -55,11 +55,9 @@ public class MainArrayLoopSwitch {
 					//not required, but good coding practise
 					break;
 			}
-
-			for (double theResult : results) {
-				System.out.println(theResult);
-			}
-
+		}
+		for (double theResult : results) {
+			System.out.println(theResult);
 		}
 	}
 }
