@@ -1,4 +1,4 @@
-package com.javafundamentals.thejavalanguage.calcengine;
+package com.javafundamentals.thejavalanguage.calcengine.introduction;
 
 public class MathEquation {
 	//02.
