@@ -71,18 +71,15 @@ public class MathEquation {
 			break;
 		}
 	}
-	//01.
 	public void execute(double leftVal, double rightVal){
 		this.leftVal = leftVal;
 		this.rightVal = rightVal;
 		execute();
 	}
-	//04. 
 	public void execute(int leftVal, int rightVal){
 		this.leftVal = leftVal;
 		this.rightVal = rightVal;
 		execute();
-		//ans is 2.25 but for integers it should be 2 so we need to provide another overload method for it
 		result = (int)result;
 	}
 }
