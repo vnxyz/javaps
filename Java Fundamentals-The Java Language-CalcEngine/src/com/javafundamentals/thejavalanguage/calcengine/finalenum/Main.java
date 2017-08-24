@@ -5,6 +5,24 @@ import com.javafundamentals.thejavalanguage.calcengine.specializedclasses.MathEq
 public class Main {
 
 	public static void main(String[] args) {
+		// useMathEquation;
+		// useCalculatorBase;
+		String[] statements = { 
+				"divide 100.0 50.0", 
+				"add 25.0 92.0",
+				"subtract 225.0 17.0", 
+				"multiply 11.0 3.0" 
+		};
+		CalculateHelper helper = new CalculateHelper();
+		for (String statement : statements) {
+			helper.process(statement);
+			// will get meaningful output because we overrided toString method
+			// of CalculateHelper
+			System.out.println(helper);
+		}
+	}
+
+	static void useMathEquation() {
 		double leftDouble = 9.0d;
 		double rightDouble = 4.0d;
 
@@ -26,6 +44,9 @@ public class Main {
 		System.out.println("result = " + equationOverload.getResult());
 
 		System.out.println();
+
+	}
+	static void useCalculateBase(){
 		System.out.println("Using Inheritance");
 		System.out.println();
 		
