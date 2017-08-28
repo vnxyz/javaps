@@ -5,20 +5,32 @@ import com.javafundamentals.thejavalanguage.calcengine.specializedclasses.MathEq
 public class Main {
 
 	public static void main(String[] args) {
-		// useMathEquation;
-		// useCalculatorBase;
-		String[] statements = { 
+		String[] statements = {
+				//01.
+				"add 1.0", 				//Error incorrect number of values
+				"add xx 1.0",			//Error non-numeric data
+				"addx 25.0 92.0",		//Error invalid command
+				//to handle these errors, I created InvalidStatementException class
 				"divide 100.0 50.0", 
 				"add 25.0 92.0",
 				"subtract 225.0 17.0", 
 				"multiply 11.0 3.0" 
 		};
 		CalculateHelper helper = new CalculateHelper();
+		// 06.
 		for (String statement : statements) {
-			helper.process(statement);
-			// will get meaningful output because we overrided toString method
-			// of CalculateHelper
-			System.out.println(helper);
+			try {
+				helper.process(statement);
+				System.out.println(helper);
+			} catch (InvalidStatementException e) {
+				//message is set when we call base class constructor
+				System.out.println(e.getMessage());
+				//checking for other exception
+				if(e.getCause() != null)
+					System.out.println("	Original Exception : " + e.getCause().getMessage());
+					
+			}
+			
 		}
 	}
 

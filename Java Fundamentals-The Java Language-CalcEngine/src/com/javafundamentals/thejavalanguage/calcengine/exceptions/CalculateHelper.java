@@ -11,44 +11,52 @@ public class CalculateHelper {
 	double rightValue;
 	double result;
 
-	public void process(String statement) {
-		// statement e.g.: add 1.0 2.0
-		// splitting statement based on space
+	public void process(String statement) throws InvalidStatementException {
 		String[] parts = statement.split(" ");
-
-		String commandString = parts[0];// add
-		leftValue = Double.parseDouble(parts[1]);// 1.0
-		rightValue = Double.parseDouble(parts[2]);// 2.0
-
-		setCommandFromString(commandString);
-
-		// can reference to classes derived from CalculateBase
-		CalculateBase calculator = null;
-
-		switch (command) {
-		case Add:
-			calculator = new Adder(leftValue, rightValue);
-			break;
-		case Subtract:
-			calculator = new Subtractor(leftValue, rightValue);
-			break;
-		case Multiply:
-			calculator = new Multiplier(leftValue, rightValue);
-			break;
-		case Divide:
-			calculator = new Divider(leftValue, rightValue);
-			break;
-
+		// 03. checks for no. of fields
+		if (parts.length != 3)
+			throw new InvalidStatementException("Incorrect number of fields",
+					statement);
+		String commandString = parts[0];
+		// 04. catches Non-numeric data exception along with
+		// NumberFormatException
+		try {
+			leftValue = Double.parseDouble(parts[1]);
+			rightValue = Double.parseDouble(parts[2]);
+		} catch (NumberFormatException e) {
+			throw new InvalidStatementException("Non-numeric data", statement,
+					e);
 		}
+		setCommandFromString(commandString);
+		// 05. if command is invalid
+		if (command == null)
+			throw new InvalidStatementException("Invalid command", statement);
+		else {
+			CalculateBase calculator = null;
 
-		calculator.calculate();
-		result = calculator.getResult();
+			switch (command) {
+			case Add:
+				calculator = new Adder(leftValue, rightValue);
+				break;
+			case Subtract:
+				calculator = new Subtractor(leftValue, rightValue);
+				break;
+			case Multiply:
+				calculator = new Multiplier(leftValue, rightValue);
+				break;
+			case Divide:
+				calculator = new Divider(leftValue, rightValue);
+				break;
+
+			}
+
+			calculator.calculate();
+			result = calculator.getResult();
+		}
 
 	}
 
 	private void setCommandFromString(String commandString) {
-		// add --> MathCommand.Add
-		// MathCommand.Add.toString() --> converts Add to String
 		if (commandString.equalsIgnoreCase(MathCommand.Add.toString()))
 			command = MathCommand.Add;
 		else if (commandString
@@ -63,13 +71,10 @@ public class CalculateHelper {
 
 	@Override
 	public String toString() {
-		// 1.0 + 2.0 = 3.0
 
 		char symbol = ' ';
 		switch (command) {
 		case Add:
-			// it will be great if this is a constant
-			// symbol = '+';
 			symbol = ADD_SYMBOL;
 			break;
 		case Subtract:
@@ -82,11 +87,6 @@ public class CalculateHelper {
 			symbol = DIVIDE_SYMBOL;
 			break;
 		}
-		/*
-		 * we know two values, result and what symbol to use. Most efficient to
-		 * build output string is to use StringBuilder. We discussed before for
-		 * better performance we can declare length so let us assume it is 20
-		 */
 		StringBuilder sb = new StringBuilder(20);
 		sb.append(leftValue);
 		sb.append(' ');
