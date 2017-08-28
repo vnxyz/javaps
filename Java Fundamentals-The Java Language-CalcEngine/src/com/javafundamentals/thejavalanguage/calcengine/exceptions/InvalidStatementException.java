@@ -1,6 +1,7 @@
 package com.javafundamentals.thejavalanguage.calcengine.exceptions;
 //02. ..... later go to calculate helper
 //all customised Exception classes extend Exception
+@SuppressWarnings("serial")
 public class InvalidStatementException extends Exception {
 	/*
 	 * remember we said that normally there are two constructors, one that
