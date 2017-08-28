@@ -8,7 +8,7 @@ import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Divider;
 import com.javafundamentals.thejavalanguage.calcengine.separatepackages.InvalidStatementException;
 import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Multiplier;
 import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Subtractor;
-import com.javafundamentals.thejavalanguage.calcengine.specializedclasses.MathEquation;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.MathEquation;
 
 public class Main {
 
@@ -31,14 +31,13 @@ public class Main {
 				helper.process(statement);
 				System.out.println(helper);
 			} catch (InvalidStatementException e) {
-				//message is set when we call base class constructor
+				// message is set when we call base class constructor
 				System.out.println(e.getMessage());
-				//checking for other exception
-				if(e.getCause() != null)
-					System.out.println("	Original Exception : " + e.getCause().getMessage());
-					
+				// checking for other exception
+				if (e.getCause() != null)
+					System.out.println("	Original Exception : "
+							+ e.getCause().getMessage());
 			}
-			
 		}
 	}
 

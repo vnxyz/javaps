@@ -1,6 +1,6 @@
 package com.javafundamentals.thejavalanguage.calcengine.separatepackages;
-
-public enum MathCommand {
+//makes it available to package only --> package private
+enum MathCommand {
 	Add,
 	Subtract,
 	Multiply,
