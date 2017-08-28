@@ -2,12 +2,9 @@
 /.metadata/.plugins
 /.metadata/.mylyn/repositories.xml.zip
 /.metadata/.mylyn/contexts
-/Java Fundamentals-The Java Language-CalcEngine/bin/com/javafundamentals/thejavalanguage/calcengine/*.class
 /.metadata/*.ini
 /.metadata/*.log
 /.metadata/*.lock
 /ps.txt
-/Java Fundamentals-The Java Language-CalcEngine/bin/com/javafundamentals/thejavalanguage/calcengine/classinitializersandconstructors/*.class
-/Java Fundamentals-The Java Language-CalcEngine/bin/com/javafundamentals/thejavalanguage/calcengine/accessormutators/*.class
-/Java Fundamentals-The Java Language-CalcEngine/bin
+# /Java Fundamentals-The Java Language-CalcEngine/bin
 /.metadata
