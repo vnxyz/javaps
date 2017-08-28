@@ -1,5 +1,13 @@
-package com.javafundamentals.thejavalanguage.calcengine.separatepackages;
+package com.javafundamentals.thejavalanguage.calcengine.separatepackages.myapp;
 
+//IDE Automatically updated these imports
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Adder;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.CalculateBase;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.CalculateHelper;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Divider;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.InvalidStatementException;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Multiplier;
+import com.javafundamentals.thejavalanguage.calcengine.separatepackages.Subtractor;
 import com.javafundamentals.thejavalanguage.calcengine.specializedclasses.MathEquation;
 
 public class Main {
